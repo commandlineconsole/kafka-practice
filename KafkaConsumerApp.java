@@ -19,7 +19,7 @@ public class KafkaConsumerApp {
         topics.add("my-topic");
         topics.add("my-other-topic");
 
-        myConsumer.subscribe(topics);// set the topic subscription
+        myConsumer.subscribe(topics);// set the topic subscription, calls to subscribe are not incremental, must be done at same time (keep as separate list) or new subscribe topic overwrites previous one
 
         try{
             while (true){
